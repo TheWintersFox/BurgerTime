@@ -51,7 +51,7 @@ const orm = {
     });
   },
   create: function(table, cols, vals, cb) {
-    const queryString = "INSERT INTO " + table;
+    let queryString = "INSERT INTO " + table;
 
     queryString += " (";
     queryString += cols.toString();
@@ -72,7 +72,7 @@ const orm = {
   },
   // An example of objColVals would be {name: Hamburger, devoured: true}
   update: function(table, objColVals, condition, cb) {
-    const queryString = "UPDATE " + table;
+    let queryString = "UPDATE " + table;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
@@ -89,7 +89,7 @@ const orm = {
     });
   },
   delete: function(table, condition, cb) {
-    const queryString = "DELETE FROM " + table;
+    let queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
 
